@@ -27,25 +27,21 @@ Users can remove items from the checkout by tapping the remove icon next to each
 - Android Studio or Xcode for Android/iOS development.
 
 ### Steps
-
-1. Clone the repository:
-
-```bash
-git clone <repository-url>
-cd checkout-page
-npm install
-npx react-native run-ios
-npx react-native run-android
-
-
-
+1. Clone the repository
+  git clone <repository-url>
+  cd checkout-page
+  npm install
+  npx react-native run-ios/ run-android
+  npm start
 
 ## Screenshots
-![my1](https://github.com/LouisaEco/rn-assignment6-11256293/assets/147488916/201a8ac3-6460-4304-82d1-683d7877f65d)
-![my2](https://github.com/LouisaEco/rn-assignment6-11256293/assets/147488916/1653184b-5829-420c-b3ac-464bae0e951b)
-![my3](https://github.com/LouisaEco/rn-assignment6-11256293/assets/147488916/e76029d6-efa8-4ca0-8ce6-645af4cadaca)
-![my4](https://github.com/LouisaEco/rn-assignment6-11256293/assets/147488916/2421e20b-432f-49ec-9889-e125e77a77eb)
+![my1](https://github.com/LouisaEco/rn-assignment6-11256293/assets/147488916/a1e26d3d-3770-4aa4-ae8f-5e2ebfb5116e)
+![my2](https://github.com/LouisaEco/rn-assignment6-11256293/assets/147488916/d580f0f5-a24f-412a-95d9-50208ffea62d)
+![my3](https://github.com/LouisaEco/rn-assignment6-11256293/assets/147488916/3e56389a-00ee-4ad7-a996-dcdc94fb1a21)
+![my4](https://github.com/LouisaEco/rn-assignment6-11256293/assets/147488916/ea2c8280-9dca-4f6a-8264-97d58157f4c3)
+
 
 ## Author
 Kornu Louisa Xorlali Eco
 11256293
+
