@@ -1,10 +1,17 @@
 import React, { useEffect, useState } from 'react';
-import { View, Text, Image, StyleSheet, ScrollView, TouchableOpacity } from 'react-native';
+import {
+  View,
+  Text,
+  Image,
+  StyleSheet,
+  ScrollView,
+  TouchableOpacity,
+} from 'react-native';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 
 const CheckoutPage = () => {
   const [selectedItems, setSelectedItems] = useState([]);
-  const removeIcon = require('./assets/remove.png'); 
+  const removeIcon = require('./assets/remove.png');
   const logo = require('./assets/Logo.png');
   const search = require('./assets/Search.png');
 
@@ -19,20 +26,17 @@ const CheckoutPage = () => {
         console.error('Error loading selected items:', error);
       }
     };
-
     loadSelectedItems();
   }, []);
 
   const handleRemoveItem = async (index) => {
     try {
-      // Remove the item from selectedItems
       const updatedItems = selectedItems.filter((_, i) => i !== index);
-
-      // Update the state
       setSelectedItems(updatedItems);
-
-      // Save the updated items to AsyncStorage
-      await AsyncStorage.setItem('selectedItems', JSON.stringify(updatedItems));
+      await AsyncStorage.setItem(
+        'selectedItems',
+        JSON.stringify(updatedItems)
+      );
     } catch (error) {
       console.error('Error removing item from cart:', error);
     }
@@ -50,26 +54,39 @@ const CheckoutPage = () => {
           </View>
         </View>
 
-        <View style={styles.headingContainer}>
-          <View style={styles.line} />
-          <View style={styles.diamond} />
-          <Text style={styles.heading}>Checkout</Text>
-          <View style={styles.line} />
+        <View style={styles.headingWrapper}>
+          <Text style={styles.heading}>C H E C K O U T</Text>
+          <View style={styles.lineContainer}>
+            <View style={styles.line} />
+            <View style={styles.diamond} />
+            <View style={styles.line} />
+          </View>
         </View>
 
-        {selectedItems.map((item, index) => (
-          <View key={index} style={styles.itemContainer}>
-            <Image source={item.image} style={styles.itemImage} />
-            <View style={styles.itemDetails}>
-              <Text style={styles.itemType}>{item.dressType}</Text>
-              <Text style={styles.itemDescription}>{item.dressDescription}</Text>
-              <Text style={styles.itemPrice}>{item.price}</Text>
+        {selectedItems.length === 0 ? (
+          <Text style={styles.emptyMessage}>
+            Items are not yet selected!
+          </Text>
+        ) : (
+          selectedItems.map((item, index) => (
+            <View key={index} style={styles.itemContainer}>
+              <Image source={item.image} style={styles.itemImage} />
+              <View style={styles.itemDetails}>
+                <Text style={styles.itemType}>{item.dressType}</Text>
+                <Text style={styles.itemDescription}>
+                  {item.dressDescription}
+                </Text>
+                <Text style={styles.itemPrice}>{item.price}</Text>
+              </View>
+              <TouchableOpacity
+                onPress={() => handleRemoveItem(index)}
+                style={styles.removeButton}
+              >
+                <Image source={removeIcon} style={styles.removeImage} />
+              </TouchableOpacity>
             </View>
-            <TouchableOpacity onPress={() => handleRemoveItem(index)} style={styles.removeButton}>
-              <Image source={removeIcon} style={styles.removeImage} />
-            </TouchableOpacity>
-          </View>
-        ))}
+          ))
+        )}
       </View>
     </ScrollView>
   );
@@ -87,47 +104,62 @@ const styles = StyleSheet.create({
   topHeader: {
     flexDirection: 'row',
     justifyContent: 'space-between',
-    alignItems: 'center', // Ensure items are centered vertically
+    alignItems: 'center',
     paddingBottom: 10,
     marginBottom: 12,
   },
   logoContainer: {
     flex: 2,
     alignItems: 'center',
+    width: 79,
+    height: 32,
+    marginLeft: 100,
   },
   searchContainer: {
     flex: 1,
     alignItems: 'flex-end',
+    marginRight: 5,
   },
   logoImage: {
-    width: 125,
-    height: 48,
+    width: 79,
+    height: 32,
   },
   searchImage: {
     width: 30,
     height: 30,
   },
-  headingContainer: {
-    flexDirection: 'row',
+  headingWrapper: {
     alignItems: 'center',
     marginBottom: 20,
+  },
+  heading: {
+    fontSize: 16,
+    fontWeight: 'bold',
+    textAlign: 'center',
+    marginBottom: 8,
+    color: '#CECECE',
+  },
+  lineContainer: {
+    flexDirection: 'row',
+    alignItems: 'center',
   },
   line: {
     flex: 1,
     height: 1,
-    backgroundColor: 'black',
+    backgroundColor: '#DCDCDC',
   },
   diamond: {
     width: 20,
     height: 20,
-    backgroundColor: 'black',
+    backgroundColor: '#DCDCDC',
     transform: [{ rotate: '45deg' }],
     marginHorizontal: 8,
   },
-  heading: {
-    fontSize: 24,
-    fontWeight: 'bold',
+  emptyMessage: {
     textAlign: 'center',
+    fontSize: 18,
+    color: '#888',
+    marginTop: 20,
   },
   itemContainer: {
     flexDirection: 'row',
@@ -145,6 +177,7 @@ const styles = StyleSheet.create({
   itemType: {
     fontSize: 18,
     fontWeight: 'bold',
+    color: '#DEA457',
   },
   itemDescription: {
     fontSize: 16,
@@ -153,6 +186,7 @@ const styles = StyleSheet.create({
   itemPrice: {
     fontSize: 18,
     fontWeight: 'bold',
+    color: 'red',
   },
   removeButton: {
     position: 'absolute',
