@@ -73,7 +73,7 @@ const Home = () => {
         <View style={styles.dressesContainer}>
           <View style={styles.dressContainer}>
             <Image source={dress1} style={styles.dressImage} />
-            <TouchableOpacity onPress={() => handleAddToCart({ image: dress1, dressType: 'Office Wear', dressDescription: 'reversible angora cardigan', price: '$120' })} style={styles.addCircleContainer}>
+            <TouchableOpacity onPress={() => handleAddToCart({ image: dress1, dressType: 'O F F I C E  W E A R', dressDescription: 'reversible angora cardigan', price: '$120' })} style={styles.addCircleContainer}>
               <Image source={addCircle} style={styles.bottomRightImage} />
             </TouchableOpacity>
             <View style={styles.dressText}>
@@ -84,7 +84,7 @@ const Home = () => {
           </View>
           <View style={styles.dressContainer}>
             <Image source={dress2} style={styles.dressImage} />
-            <TouchableOpacity onPress={() => handleAddToCart({ image: dress2, dressType: 'Black', dressDescription: 'reversible angora cardigan', price: '$180' })} style={styles.addCircleContainer}>
+            <TouchableOpacity onPress={() => handleAddToCart({ image: dress2, dressType: 'B L A C K', dressDescription: 'reversible angora cardigan', price: '$180' })} style={styles.addCircleContainer}>
               <Image source={addCircle} style={styles.bottomRightImage} />
             </TouchableOpacity>
             <View style={styles.dressText}>
@@ -98,7 +98,7 @@ const Home = () => {
         <View style={styles.dressesContainer}>
           <View style={styles.dressContainer}>
             <Image source={dress3} style={styles.dressImage} />
-            <TouchableOpacity onPress={() => handleAddToCart({ image: dress3, dressType: 'Church Wear', dressDescription: 'reversible angora cardigan', price: '$180' })} style={styles.addCircleContainer}>
+            <TouchableOpacity onPress={() => handleAddToCart({ image: dress3, dressType: 'C H U R C H  W E A R', dressDescription: 'reversible angora cardigan', price: '$180' })} style={styles.addCircleContainer}>
               <Image source={addCircle} style={styles.bottomRightImage} />
             </TouchableOpacity>
             <View style={styles.dressText}>
@@ -109,7 +109,7 @@ const Home = () => {
           </View>
           <View style={styles.dressContainer}>
             <Image source={dress4} style={styles.dressImage} />
-            <TouchableOpacity onPress={() => handleAddToCart({ image: dress4, dressType: 'Lamerai', dressDescription: 'reversible angora cardigan', price: '$180' })} style={styles.addCircleContainer}>
+            <TouchableOpacity onPress={() => handleAddToCart({ image: dress4, dressType: 'L A M E R A I', dressDescription: 'reversible angora cardigan', price: '$180' })} style={styles.addCircleContainer}>
               <Image source={addCircle} style={styles.bottomRightImage} />
             </TouchableOpacity>
             <View style={styles.dressText}>
@@ -123,7 +123,7 @@ const Home = () => {
         <View style={styles.dressesContainer}>
           <View style={styles.dressContainer}>
             <Image source={dress5} style={styles.dressImage} />
-            <TouchableOpacity onPress={() => handleAddToCart({ image: dress5, dressType: '21WN', dressDescription: 'reversible angora cardigan', price: '$180' })} style={styles.addCircleContainer}>
+            <TouchableOpacity onPress={() => handleAddToCart({ image: dress5, dressType: '2 1 W N', dressDescription: 'reversible angora cardigan', price: '$180' })} style={styles.addCircleContainer}>
               <Image source={addCircle} style={styles.bottomRightImage} />
             </TouchableOpacity>
             <View style={styles.dressText}>
@@ -134,7 +134,7 @@ const Home = () => {
           </View>
           <View style={styles.dressContainer}>
             <Image source={dress6} style={styles.dressImage} />
-            <TouchableOpacity onPress={() => handleAddToCart({ image: dress6, dressType: 'Lapo', dressDescription: 'reversible angora cardigan', price: '$180' })} style={styles.addCircleContainer}>
+            <TouchableOpacity onPress={() => handleAddToCart({ image: dress6, dressType: 'L A P O', dressDescription: 'reversible angora cardigan', price: '$180' })} style={styles.addCircleContainer}>
               <Image source={addCircle} style={styles.bottomRightImage} />
             </TouchableOpacity>
             <View style={styles.dressText}>
@@ -148,7 +148,7 @@ const Home = () => {
         <View style={styles.dressesContainer}>
           <View style={styles.dressContainer}>
             <Image source={dress7} style={styles.dressImage} />
-            <TouchableOpacity onPress={() => handleAddToCart({ image: dress7, dressType: '21WN', dressDescription: 'reversible angora cardigan', price: '$180' })} style={styles.addCircleContainer}>
+            <TouchableOpacity onPress={() => handleAddToCart({ image: dress7, dressType: '2 1 W N', dressDescription: 'reversible angora cardigan', price: '$180' })} style={styles.addCircleContainer}>
               <Image source={addCircle} style={styles.bottomRightImage} />
             </TouchableOpacity>
             <View style={styles.dressText}>
@@ -159,7 +159,7 @@ const Home = () => {
           </View>
           <View style={styles.dressContainer}>
             <Image source={dress3} style={styles.dressImage} />
-            <TouchableOpacity onPress={() => handleAddToCart({ image: dress3, dressType: 'Lame', dressDescription: 'reversible angora cardigan', price: '$180' })} style={styles.addCircleContainer}>
+            <TouchableOpacity onPress={() => handleAddToCart({ image: dress3, dressType: 'L A M E', dressDescription: 'reversible angora cardigan', price: '$180' })} style={styles.addCircleContainer}>
               <Image source={addCircle} style={styles.bottomRightImage} />
             </TouchableOpacity>
             <View style={styles.dressText}>
@@ -199,11 +199,14 @@ const styles = StyleSheet.create({
   logoContainer: {
     flex: 2,
     alignItems: 'center',
-    marginLeft: 50,
+    marginLeft: 20,
+    width: 79,
+    height: 32,
   },
   searchContainer: {
     flex: 1,
     alignItems: 'flex-end',
+    marginLeftt: -50,
   },
   shoppingBagContainer: {
     flex: 1,
@@ -211,12 +214,12 @@ const styles = StyleSheet.create({
     marginLeft: -25,
   },
   menuImage: {
-    width: 50,
-    height: 50,
+    width: 30,
+    height: 30,
   },
   logoImage: {
-    width: 125,
-    height: 48,
+    width: 79,
+    height: 32,
   },
   searchImage: {
     width: 30,
@@ -233,25 +236,28 @@ const styles = StyleSheet.create({
     marginLeft: 10,
   },
   ourStoryText: {
+    paddingTop: 5,
     fontWeight: 'bold',
+    paddingBottom: 5,
+    fontSize: 15,
   },
   contentContainer: {
     alignItems: 'center',
-    width: 60,
-    height: 60,
-    borderRadius: 34,
+    width: 30,
+    height: 30,
+    borderRadius: 17,
     backgroundColor: '#DCDCDC',
     justifyContent: 'center',
-    marginRight: 20,
+    marginLeft: 150,
   },
   contentImage: {
     // Add your image styles here
   },
   sortDescendingContainer: {
     alignItems: 'center',
-    width: 60,
-    height: 60,
-    borderRadius: 34,
+    width: 30,
+    height: 30,
+    borderRadius: 17,
     backgroundColor: '#DCDCDC',
     justifyContent: 'center',
   },
